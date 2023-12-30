@@ -1,9 +1,10 @@
-import 'package:currency_app/ui/exchange.dart';
-import 'package:currency_app/ui/home.dart';
 import 'package:flutter/material.dart';
 
+import 'exchange.dart';
+import 'home.dart';
+
 class Dashboard extends StatefulWidget {
-  const Dashboard({super.key});
+  const Dashboard({Key? key}) : super(key: key);
 
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -14,7 +15,7 @@ class _DashboardState extends State<Dashboard> {
 
   Widget getView() {
     if (_selectedIndex == 0) {
-      return const Homepage();
+      return const HomePage();
     }
     return const Exchange();
   }
@@ -24,7 +25,7 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text("Flutter Currency Convert "),
+        title: const Text("Flutter Currency Convert"),
       ),
       body: getView(),
       bottomNavigationBar: BottomNavigationBar(
